@@ -13,16 +13,18 @@
       <header class="sidebar">
         <h1>Wiktoria Grubizna</h1>
         <p class="role">Frontend Developer</p>
+        <link rel="icon" href="neon-v-logo-stockcake.png />
+
         <p class="intro">
           I build modern, accessible, and scalable web applications.
         </p>
 
-        <nav>
+        <nav class="side-nav">
           <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
           </ul>
         </nav>
 
@@ -32,39 +34,60 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            GitHub
+            <img src="github.png" alt="GitHub profile" />
           </a>
+
           <a
             href="https://www.linkedin.com/in/wiktoria-grubizna-932a19241/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            LinkedIn
+            <img src="linkedin.png" alt="LinkedIn profile" />
           </a>
         </div>
       </header>
 
       <main class="content">
         <section id="about">
+          <nav class="section-nav">
+            <ul>
+              <li><a href="#about">About</a></li>
+            </ul>
+          </nav>
+
           <h2>About Me</h2>
-          <p>
-            I am a Frontend Developer with a solid academic background in
-            Computer Science, specializing in Information Systems Design and
-            Data Analysis. I combine strong theoretical foundations with
-            hands-on practical experience gained through frontend development
-            internships and individual mentoring focused on preparing for a
-            professional career in IT.
-          </p>
-          <p>
-            Currently, I work at Allegro in the logistics department, where I
-            analyze shipment statuses and processes. This role has strengthened
-            my analytical thinking, attention to detail, and ability to work
-            with complex systems, which directly supports my approach to
-            frontend development.
-          </p>
+
+          <div class="about-content">
+            <div class="about-text">
+              <p>
+                I am a Frontend Developer with a solid academic background in
+                Computer Science, specializing in Information Systems Design and
+                Data Analysis. I combine strong theoretical foundations with
+                hands-on practical experience gained through frontend
+                development internships and individual mentoring.
+              </p>
+
+              <p>
+                Currently, I work at Allegro in the logistics department, where
+                I analyze shipment statuses and processes. This role has
+                strengthened my analytical thinking, attention to detail, and
+                ability to work with complex systems.
+              </p>
+            </div>
+
+            <div class="about-image">
+              <img src="image.jpeg" alt="Wiktoria Grubizna" />
+            </div>
+          </div>
         </section>
 
         <section id="experience">
+          <nav class="section-nav">
+            <ul>
+              <li><a href="#experience">Experience</a></li>
+            </ul>
+          </nav>
+
           <h2>Experience</h2>
 
           <article class="job">
@@ -92,7 +115,7 @@
             <p class="date">June 2023 – September 2023</p>
             <h3>Frontend Developer Intern • WASKO</h3>
             <p>
-              Developed reusable UI components using React, worked with
+              Developed reusable UI components using Angular, worked with
               JavaScript and TypeScript, used Git and GitLab for version
               control, and implemented data visualizations using D3.js.
             </p>
@@ -100,10 +123,60 @@
         </section>
 
         <section id="projects">
+          <nav class="section-nav">
+            <ul>
+              <li><a href="#projects">Projects</a></li>
+            </ul>
+          </nav>
           <h2>Projects</h2>
           <ul class="projects-list">
-            <li>Project 1</li>
-            <li>Project 2</li>
+            <li class="project-item">
+              <a
+                href="https://to-do-list-wg.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="todo.png" alt="ToDo App" class="project-img" />
+              </a>
+              <div class="project-info">
+                <h3>ToDo App</h3>
+                <p class="project-description">
+                  A modern, responsive ToDo app built with React. Users can add,
+                  edit, and delete tasks, mark tasks as completed, and filter
+                  them by status. The app demonstrates state management in
+                  React, reusable components, and a clean, user-friendly
+                  interface.
+                </p>
+                <button class="show-more-btn">Show more</button>
+              </div>
+            </li>
+
+            <li class="project-item">
+              <a
+                href="https://viktoriagrubi.github.io/Dynamic-Job-Listings-with-JSON/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="project-2.png"
+                  alt="Dynamic Job Listings App"
+                  class="project-img"
+                />
+              </a>
+              <div class="project-info">
+                <h3>Dynamic Job Listings</h3>
+                <p class="project-description">
+                  A dynamic, responsive job listings web application built with
+                  HTML, CSS, and JavaScript. Users can filter and search through
+                  job postings based on role, level, and tools required. The
+                  project demonstrates DOM manipulation, JSON data handling, and
+                  interactive UI elements. It is fully responsive, featuring a
+                  clean layout and smooth user experience, making it a great
+                  showcase of front-end skills and dynamic content rendering.
+                </p>
+                <button class="show-more-btn">Show more</button>
+              </div>
+            </li>
             <li>Project 3</li>
             <li>Project 4</li>
             <li>Project 5</li>
@@ -118,6 +191,11 @@
 
     <footer>
       <section id="contact">
+        <nav class="section-nav">
+          <ul>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
         <h2>Contact</h2>
         <p>
           Email:

@@ -93,6 +93,32 @@ nav a:hover {
   color: #e0d7ff;
 }
 
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.about-text {
+  flex: 2;
+}
+
+.about-image {
+  flex: 1;
+  max-width: 260px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 8px;
+  filter: none;
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: translateY(-4px);
+}
+
 .content {
   width: 60%;
   padding: 4rem;
@@ -170,6 +196,117 @@ footer a:hover {
   text-decoration: underline;
 }
 
+.social-links img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.social-links img:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.section-nav {
+  display: none;
+}
+
+.job {
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid transparent;
+  background-color: #2e005a;
+  transition: background-color 0.3s ease, border-left 0.3s ease,
+    transform 0.2s ease;
+  border-radius: 20px;
+}
+
+.job:hover {
+  background-color: #3d006f;
+  border-left: 4px solid #c5a3ff;
+  transform: translateX(3px);
+}
+
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-item {
+  background-color: #2e005a;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.project-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+.project-info {
+  padding: 0.75rem 1rem;
+  text-align: center;
+  color: #c5a3ff;
+}
+
+.project-info h3 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.1rem;
+}
+
+.project-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #e0d7ff;
+}
+
+.project-description {
+  max-height: 3.6rem;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.project-description.expanded {
+  max-height: 1000px;
+}
+
+.show-more-btn {
+  margin-top: 0.5rem;
+  background-color: #c5a3ff;
+  border: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #2e005a;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.show-more-btn:hover {
+  background-color: #e0d7ff;
+}
+
 @media (max-width: 900px) {
   .layout {
     flex-direction: column;
@@ -192,5 +329,30 @@ footer a:hover {
 
   .projects-list {
     grid-template-columns: 1fr;
+  }
+
+  .about-content {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .about-text {
+    flex: 2;
+  }
+
+  .about-image {
+    flex: 0 0 160px;
+  }
+
+  .side-nav {
+    display: none;
+  }
+
+  .project-description {
+    max-height: none;
+  }
+
+  .show-more-btn {
+    display: none;
   }
 }
