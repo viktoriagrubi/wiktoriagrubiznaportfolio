@@ -257,7 +257,7 @@ footer a:hover {
   background-color: #e0d7ff;
 }
 .github-link {
-  margin-top: 8px;
+  margin-top: 15px;
   display: inline-block;
 }
 .github-link img {
@@ -270,6 +270,94 @@ footer a:hover {
   opacity: 1;
   transform: scale(1.1);
 }
+
+.contact-email {
+  margin-bottom: 2.5rem;
+  color: #d9cfff;
+}
+
+.contact-form {
+  background-color: #2e005a;
+  padding: 2.5rem;
+  border-radius: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.6rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: #c5a3ff;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: #1e0f3f;
+  border: 1px solid #3a0f5f;
+  border-radius: 6px;
+  padding: 0.7rem 0.9rem;
+  color: #e0d7ff;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #b5a0ff;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #c5a3ff;
+}
+
+.send-btn {
+  margin-top: 0.5rem;
+  background-color: #c5a3ff;
+  color: #2e005a;
+  border: none;
+  padding: 0.65rem 1.6rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.send-btn:hover {
+  background-color: #e0d7ff;
+  transform: translateY(-2px);
+}
+
+.contact-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.contact-left {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-right {
+  width: 50%;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 @media (max-width: 900px) {
   .layout {
     flex-direction: column;
@@ -307,5 +395,27 @@ footer a:hover {
   }
   .show-more-btn {
     display: none;
+  }
+
+  .contact-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-layout {
+    flex-direction: column;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+  }
+
+  .contact-left {
+    height: 240px;
+  }
+
+  .contact-left img {
+    height: 100%;
   }
 }

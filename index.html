@@ -139,7 +139,7 @@
                 <img src="todo.png" alt="ToDo App" class="project-img" />
               </a>
               <div class="project-info">
-                <h3>ToDo App</h3>
+                <h3>ToDo <br />App</h3>
                 <p class="project-description">
                   A modern, responsive ToDo app built with React. Users can add,
                   edit, and delete tasks, mark tasks as completed, and filter
@@ -171,7 +171,10 @@
                 />
               </a>
               <div class="project-info">
-                <h3>Dynamic Job Listings</h3>
+                <h3>
+                  Dynamic Job <br />
+                  Listings
+                </h3>
                 <p class="project-description">
                   A dynamic, responsive job listings web application built with
                   HTML, CSS, and JavaScript. Users can filter and search through
@@ -242,7 +245,7 @@
                 />
               </a>
               <div class="project-info">
-                <h3>Product List with Cart</h3>
+                <h3>Product List <br />with Cart</h3>
                 <p class="project-description">
                   A responsive product listing page featuring a fully functional
                   shopping cart built with JavaScript. Users can browse
@@ -434,19 +437,42 @@
     </div>
 
     <footer>
-      <section id="contact">
-        <nav class="section-nav">
-          <ul>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <h2>Contact</h2>
-        <p>
-          Email:
-          <a href="mailto:wiktoria.grubizna@gmail.com">
-            wiktoria.grubizna@gmail.com
-          </a>
-        </p>
+      <section id="contact" class="contact-section">
+        <div class="contact-layout">
+          <div class="contact-left">
+            <img src="contact.png" alt="Contact illustration" />
+          </div>
+
+          <div class="contact-right">
+            <h2>Contact</h2>
+
+            <p class="contact-email">
+              Email:
+              <a href="mailto:wiktoria.grubizna@gmail.com">
+                wiktoria.grubizna@gmail.com
+              </a>
+            </p>
+
+            <form class="contact-form">
+              <div class="form-group">
+                <label>Your email</label>
+                <input type="email" placeholder="name@email.com" />
+              </div>
+
+              <div class="form-group">
+                <label>Subject</label>
+                <input type="text" placeholder="Message subject" />
+              </div>
+
+              <div class="form-group">
+                <label>Message</label>
+                <textarea rows="5" placeholder="Your message..."></textarea>
+              </div>
+
+              <button class="send-btn">Send</button>
+            </form>
+          </div>
+        </div>
       </section>
     </footer>
   </body>
