@@ -1,4 +1,3 @@
-// ==========================
 const showMoreButtons = document.querySelectorAll(".show-more-btn");
 
 showMoreButtons.forEach((btn) => {
