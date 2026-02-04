@@ -3,9 +3,15 @@ const showMoreButtons = document.querySelectorAll(".show-more-btn");
 showMoreButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     const description = btn.previousElementSibling;
-    const expanded = description.classList.toggle("expanded");
+    const isExpanded = description.classList.toggle("expanded");
 
-    btn.textContent = expanded ? "Show less" : "Show more";
+    if (isExpanded) {
+      description.style.height = description.scrollHeight + "px";
+      btn.textContent = "Show less";
+    } else {
+      description.style.height = "3.6rem";
+      btn.textContent = "Show more";
+    }
   });
 });
 
@@ -108,3 +114,8 @@ const sectionObserver = new IntersectionObserver(
 sections.forEach((section) => {
   sectionObserver.observe(section);
 });
+
+if (entry.isIntersecting) {
+  const id = entry.target.id;
+  history.replaceState(null, "", `#${id}`);
+}
