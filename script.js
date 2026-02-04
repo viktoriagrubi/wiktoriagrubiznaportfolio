@@ -58,3 +58,24 @@ document
       }
     });
   });
+
+(function () {
+  emailjs.init("j6MXjttjaZAW6xZXi");
+})();
+
+const contactForm = document.getElementById("contact-form");
+
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  emailjs.sendForm("service_1vgu01q", "template_fxh277b", this).then(
+    () => {
+      alert("Thank you! Your message has been sent successfully.");
+      contactForm.reset();
+    },
+    (error) => {
+      alert("Something went wrong. Please try again later.");
+      console.error("EmailJS error:", error);
+    },
+  );
+});
