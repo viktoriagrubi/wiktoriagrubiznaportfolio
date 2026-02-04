@@ -497,6 +497,33 @@ footer a:hover {
   transition: opacity 0.3s ease;
 }
 
+.side-nav .nav-link {
+  position: relative;
+  display: inline-block;
+  padding-left: 0;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.side-nav .nav-link.active {
+  color: #e0d7ff;
+  transform: translateX(12px);
+}
+
+.side-nav .nav-link.active::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #c5a3ff;
+  box-shadow: 0 0 12px rgba(197, 163, 255, 0.8);
+}
+
 @media (max-width: 900px) {
   .layout {
     flex-direction: column;

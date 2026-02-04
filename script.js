@@ -79,3 +79,32 @@ contactForm.addEventListener("submit", function (e) {
     },
   );
 });
+
+const sections = document.querySelectorAll("main section, footer section");
+const navLinks = document.querySelectorAll(".side-nav .nav-link");
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute("id");
+
+        navLinks.forEach((link) => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${id}`,
+          );
+        });
+      }
+    });
+  },
+  {
+    root: null,
+    rootMargin: "-40% 0px -40% 0px",
+    threshold: 0,
+  },
+);
+
+sections.forEach((section) => {
+  sectionObserver.observe(section);
+});
