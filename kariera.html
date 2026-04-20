@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Wiktoria Grubizna</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <link rel="icon" href="image/neon-v-logo-stockcake.png" type="image/png" />
+  </head>
+
+  <body>
+    <div class="cursor-glow"></div>
+
+    <div class="layout">
+      <header class="sidebar">
+        <h1>Wiktoria Grubizna</h1>
+        <p class="role">Pośrednik Finansowo-Ubezpieczeniowy</p>
+        <link rel="icon" href="neon-v-logo-stockcake.png" />
+
+        <p class="intro">
+          Pomagam klientom w osiągnięciu bezpieczeństwa finansowego,
+          optymalizacji inwestycji oraz w doborze odpowiednich ubezpieczeń.
+        </p>
+
+        <nav class="side-nav">
+          <ul>
+            <li><a href="index.html#about" class="nav-link">O Mnie</a></li>
+            <li><a href="index.html#experience" class="nav-link">Warto przeczytać</a></li>
+            <li><a href="pomoc.html" class="nav-link">Jak mogę Ci pomóc?</a></li>
+            <li><a href="kariera.html" class="nav-link active">Kariera</a></li>
+            <li><a href="index.html#contact" class="nav-link">Kontakt</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <nav class="mobile-top-nav">
+  <a href="index.html#about">O Mnie</a>
+  <a href="index.html#experience">Warto przeczytać</a>
+  <a href="pomoc.html">Jak mogę Ci pomóc?</a>
+  <a href="kariera.html" class="active-mobile">Kariera</a>
+  <a href="index.html#contact">Kontakt</a>
+</nav>
+    <div class="content">
+<a href="index.html#about" class="back-link">
+          ← Powrót do strony głównej
+        </a>
+  <section id="kariera">
+  <h2>Kariera</h2>
+
+  <p>
+    Szukasz miejsca, w którym możesz się rozwijać, zdobywać realne umiejętności
+    i budować swoją niezależność finansową?
+  </p>
+
+  <p>
+    Dołącz do mojego zespołu i rozpocznij swoją drogę w branży finansowej —
+    nawet jeśli nie masz doświadczenia. <strong>Wszystkiego Cię nauczymy od podstaw.</strong>
+  </p>
+
+  <p>
+    Praca odbywa się <strong>w 100% zdalnie</strong>, dzięki czemu możesz działać
+    z dowolnego miejsca i dopasować ją do swojego stylu życia.
+  </p>
+
+  <p>
+    Zapewniamy kompleksowe wdrożenie, wsparcie na każdym etapie oraz możliwość
+    zdobycia <strong>licencji do wykonywania zawodu jako pośrednik finansowy</strong>.
+  </p>
+
+  <p>
+    Pracujesz na własnych zasadach, rozwijasz kompetencje sprzedażowe i budujesz
+    dochód dopasowany do Twojego zaangażowania.
+  </p>
+
+  <p>
+    Jeśli jesteś osobą ambitną, komunikatywną i chcesz czegoś więcej —
+    to miejsce jest dla Ciebie.
+  </p>
+</section>
+
+
+  <section id="rekrutacja">
+    <h2>Formularz rekrutacyjny</h2>
+
+    <form class="google-style-form" id="career-form">
+
+      <div class="form-block">
+        <label>Imię i nazwisko</label>
+        <input type="text" name="name" placeholder="Wpisz swoje imię i nazwisko" required />
+      </div>
+
+      <div class="form-block">
+        <label>Adres e-mail</label>
+        <input type="email" name="email" placeholder="twoj@email.com" required />
+      </div>
+
+      <div class="form-block">
+        <label>Numer telefonu</label>
+        <input type="tel" name="phone" placeholder="123 456 789" required />
+      </div>
+
+      <div class="form-block">
+        <label>Miasto</label>
+        <input type="text" name="city" placeholder="Np. Wrocław" required />
+      </div>
+
+      <div class="form-block">
+        <label>Twoje doświadczenie</label>
+        <select name="experience" required>
+          <option value="">Wybierz</option>
+          <option value="brak">Brak doświadczenia</option>
+          <option value="sprzedaz">Sprzedaż</option>
+          <option value="finanse">Finanse</option>
+          <option value="inne">Inne</option>
+        </select>
+      </div>
+
+      <div class="form-block">
+        <label>Dlaczego chcesz dołączyć?</label>
+        <textarea name="message" rows="4" placeholder="Napisz kilka słów o sobie..." required></textarea>
+      </div>
+
+      <div class="form-block">
+        <label>Dyspozycyjność</label>
+        <div class="checkbox-group">
+          <label class="checkbox-card">
+            <input type="checkbox" name="availability" value="pełen etat" />
+            <span>Pełen etat</span>
+          </label>
+
+          <label class="checkbox-card">
+            <input type="checkbox" name="availability" value="część etatu" />
+            <span>Część etatu</span>
+          </label>
+
+          <label class="checkbox-card">
+            <input type="checkbox" name="availability" value="dodatkowa praca" />
+            <span>Dodatkowe zajęcie</span>
+          </label>
+        </div>
+      </div>
+
+      
+
+      <button type="submit" class="send-btn">Wyślij zgłoszenie</button>
+
+    </form>
+  </section>
+
+</div>
+      
+    </footer>
+  </body>
+</html>

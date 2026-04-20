@@ -19,6 +19,11 @@ body {
   background-color: #1e0f3f;
 }
 
+.meeting-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+
 .layout::before {
   content: "";
   position: fixed;
@@ -50,14 +55,18 @@ body {
 .sidebar {
   width: 40%;
   padding: 4rem;
+
   position: sticky;
   top: 0;
+
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+
   color: #e0d7ff;
 }
+
 .sidebar h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -136,7 +145,7 @@ nav a:hover {
 .content {
   width: 60%;
   padding: 4rem;
-  overflow-y: auto;
+
   scroll-behavior: smooth;
 }
 section {
@@ -442,7 +451,7 @@ footer a:hover {
 
 .contact-layout {
   display: flex;
-  min-height: 100vh;
+  align-items: stretch;
 }
 
 .contact-left {
@@ -455,7 +464,8 @@ footer a:hover {
 
 .contact-left img {
   width: 100%;
-  height: 90%;
+  height: 100%;
+  max-height: 420px;
   object-fit: cover;
   border-radius: 50px;
 }
@@ -561,6 +571,177 @@ footer a:hover {
 .send-btn:hover {
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 8px 24px rgba(255, 182, 241, 0.5);
+}
+
+.google-style-form {
+  max-width: 720px;
+  background: linear-gradient(145deg, #2e005a, #1e0f3f);
+  border: 1px solid rgba(197, 163, 255, 0.15);
+  border-radius: 18px;
+  padding: 2.5rem;
+}
+
+.form-block {
+  margin-bottom: 1.8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-block label {
+  font-size: 0.9rem;
+  color: #c5a3ff;
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+}
+
+.google-style-form input,
+.google-style-form textarea,
+.google-style-form select {
+  background-color: #1e0f3f;
+  border: 1px solid #3a0f5f;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  color: #e0d7ff;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.google-style-form input:focus,
+.google-style-form textarea:focus,
+.google-style-form select:focus {
+  outline: none;
+  border-color: #ffb6f1;
+  box-shadow: 0 0 12px rgba(255, 182, 241, 0.35);
+}
+
+.google-style-form textarea {
+  resize: vertical;
+}
+
+.google-style-form select {
+  cursor: pointer;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+/* KAFELKI */
+.checkbox-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 1rem 1.2rem;
+  border-radius: 14px;
+
+  background: rgba(30, 15, 63, 0.6);
+  border: 1px solid rgba(197, 163, 255, 0.15);
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  color: #e0d7ff;
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* ukrycie checkboxa */
+.checkbox-card input {
+  display: none;
+}
+
+/* hover */
+.checkbox-card:hover {
+  transform: translateY(-2px);
+  border-color: #c5a3ff;
+  background: rgba(197, 163, 255, 0.08);
+}
+
+/* zaznaczony stan */
+.checkbox-card input:checked + span {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* efekt aktywnego kafelka */
+.checkbox-card:has(input:checked) {
+  background: linear-gradient(135deg, #a883ff, #ffb6f1);
+  color: #1e0f3f;
+  border: none;
+  box-shadow: 0 8px 24px rgba(255, 182, 241, 0.35);
+}
+
+/* tekst wewnątrz */
+.checkbox-card span {
+  transition: all 0.2s ease;
+}
+
+.article-content {
+  max-width: 800px;
+  margin-top: 1.5rem;
+}
+
+.article-content p {
+  margin-bottom: 1.2rem;
+  line-height: 1.8;
+  color: #d9cfff;
+}
+
+.article-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #e0d7ff;
+  font-size: 1.2rem;
+}
+
+.article-list {
+  margin: 1rem 0 2rem;
+  padding-left: 1.2rem;
+  color: #d9cfff;
+}
+
+.article-list li {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #c5a3ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  color: #e0d7ff;
+}
+
+.job-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.wp-article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.video-wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 2rem;
 }
 
 @media (max-width: 900px) {
@@ -727,31 +908,48 @@ footer a:hover {
     justify-content: space-between;
     align-items: center;
 
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    padding: 0 1rem;
-    margin-bottom: 1.5rem;
 
-    position: sticky;
-    top: 0;
-    z-index: 20;
+    padding: 0.6rem 0.4rem;
+    z-index: 1000;
 
-    flex-wrap: wrap;
-    gap: 0.8rem;
-
-    background: linear-gradient(to bottom, #1e0f3f 80%, rgba(30, 15, 63, 0));
+    background: rgba(30, 15, 63, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(197, 163, 255, 0.15);
   }
 
   .mobile-top-nav a {
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    flex: 1;
+    text-align: center;
 
-    white-space: nowrap;
-    padding: 4px 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+
+    padding: 8px 4px;
+    border-radius: 10px;
 
     color: #b5a0ff;
     text-decoration: none;
+
+    transition: all 0.25s ease;
+  }
+
+  .mobile-top-nav a:active {
+    transform: scale(0.95);
+  }
+
+  .mobile-top-nav a.active {
+    color: #ffffff;
+    background: linear-gradient(135deg, #a883ff, #ffb6f1);
+    box-shadow: 0 4px 12px rgba(255, 182, 241, 0.4);
+  }
+
+  .content {
+    padding-bottom: 80px;
   }
 
   .mobile-top-nav a:hover {
@@ -767,6 +965,41 @@ footer a:hover {
   .contact-desktop-nav {
     display: none;
   }
+}
+
+.file-upload {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+/* przycisk jak send-btn */
+.file-btn {
+  background: linear-gradient(135deg, #2e005a, #5b2b9c);
+  color: #e0d7ff;
+  font-weight: 600;
+  padding: 0.65rem 1.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid rgba(197, 163, 255, 0.35);
+
+  transition: all 0.25s ease;
+  display: inline-block;
+}
+
+.file-btn:hover {
+  background: linear-gradient(135deg, #3a0f5f, #7a3cff);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(122, 60, 255, 0.35);
+}
+
+.file-name {
+  font-size: 0.85rem;
+  color: #c5a3ff;
 }
 
 @media (max-width: 600px) {

@@ -1,3 +1,87 @@
+(function () {
+  emailjs.init("j6MXjttjaZAW6xZXi");
+})();
+
+// ===== UNIWERSALNY FORM HANDLER =====
+function handleForm(formId, successMsg) {
+  const form = document.getElementById(formId);
+  if (!form) return;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    // HELP FORM (checkboxy + pełne dane)
+    if (formId === "help-form") {
+      const data = {
+        from_name: formData.get("from_name"),
+        reply_to: formData.get("reply_to"),
+        phone: formData.get("phone"),
+        topic: formData.getAll("topic").join(", "),
+        message: formData.get("message"),
+      };
+
+      emailjs
+        .send("service_1vgu01q", "template_fxh277b", data)
+        .then(() => {
+          alert(successMsg);
+          form.reset();
+        })
+        .catch((err) => {
+          alert("Błąd wysyłki");
+          console.error(err);
+        });
+
+      return;
+    }
+
+    // CAREER FORM
+    if (formId === "career-form") {
+      const data = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        city: formData.get("city"),
+        experience: formData.get("experience"),
+        message: formData.get("message"),
+        availability: formData.getAll("availability").join(", "),
+      };
+
+      emailjs
+        .send("service_1vgu01q", "template_fxh277b", data)
+        .then(() => {
+          alert(successMsg);
+          form.reset();
+        })
+        .catch((err) => {
+          alert("Błąd wysyłki");
+          console.error(err);
+        });
+
+      return;
+    }
+
+    // CONTACT FORM (stary działa jak był)
+    emailjs.sendForm("service_1vgu01q", "template_fxh277b", form).then(
+      () => {
+        alert(successMsg);
+        form.reset();
+      },
+      (error) => {
+        alert("Błąd wysyłki");
+        console.error(error);
+      },
+    );
+  });
+}
+
+// ===== FORMS =====
+handleForm("contact-form", "Wiadomość wysłana ✅");
+handleForm("help-form", "Dziękuję! Odezwę się 😊");
+handleForm("career-form", "Zgłoszenie wysłane 🚀");
+
+// ===== UI (reszta Twojego kodu zostaje bez zmian) =====
 const showMoreButtons = document.querySelectorAll(".show-more-btn");
 
 showMoreButtons.forEach((btn) => {
@@ -19,16 +103,13 @@ const revealElements = document.querySelectorAll(
   ".job, .project-item, section h2",
 );
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  { threshold: 0.15 },
-);
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+});
 
 revealElements.forEach((el) => {
   el.classList.add("reveal");
@@ -43,79 +124,3 @@ window.addEventListener("mousemove", (e) => {
   cursorGlow.style.left = `${e.clientX}px`;
   cursorGlow.style.top = `${e.clientY}px`;
 });
-
-window.addEventListener("mouseleave", () => {
-  cursorGlow.style.opacity = "0";
-});
-
-window.addEventListener("mouseenter", () => {
-  cursorGlow.style.opacity = "1";
-});
-
-document
-  .querySelectorAll(".nav-link, .mobile-top-nav a, .contact-desktop-nav a")
-  .forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute("href").substring(1);
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  });
-
-(function () {
-  emailjs.init("j6MXjttjaZAW6xZXi");
-})();
-
-const contactForm = document.getElementById("contact-form");
-
-contactForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  emailjs.sendForm("service_1vgu01q", "template_fxh277b", this).then(
-    () => {
-      alert("Thank you! Your message has been sent successfully.");
-      contactForm.reset();
-    },
-    (error) => {
-      alert("Something went wrong. Please try again later.");
-      console.error("EmailJS error:", error);
-    },
-  );
-});
-
-const sections = document.querySelectorAll("main section, footer section");
-const navLinks = document.querySelectorAll(".side-nav .nav-link");
-
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute("id");
-
-        navLinks.forEach((link) => {
-          link.classList.toggle(
-            "active",
-            link.getAttribute("href") === `#${id}`,
-          );
-        });
-      }
-    });
-  },
-  {
-    root: null,
-    rootMargin: "-40% 0px -40% 0px",
-    threshold: 0,
-  },
-);
-
-sections.forEach((section) => {
-  sectionObserver.observe(section);
-});
-
-if (entry.isIntersecting) {
-  const id = entry.target.id;
-  history.replaceState(null, "", `#${id}`);
-}

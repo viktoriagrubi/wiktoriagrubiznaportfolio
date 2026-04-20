@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Wiktoria Grubizna</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <link rel="icon" href="image/neon-v-logo-stockcake.png" type="image/png" />
+  </head>
+
+  <body>
+    <div class="cursor-glow"></div>
+
+    <div class="layout">
+      <header class="sidebar">
+        <h1>Wiktoria Grubizna</h1>
+        <p class="role">Pośrednik Finansowo-Ubezpieczeniowy</p>
+        <link rel="icon" href="neon-v-logo-stockcake.png" />
+
+        <p class="intro">
+          Pomagam klientom w osiągnięciu bezpieczeństwa finansowego,
+          optymalizacji inwestycji oraz w doborze odpowiednich ubezpieczeń.
+        </p>
+
+        <nav class="side-nav">
+          <ul>
+            <li><a href="index.html#about" class="nav-link">O Mnie</a></li>
+            <li><a href="index.html#experience" class="nav-link">Warto przeczytać</a></li>
+            <li><a href="pomoc.html" class="nav-link active">Jak mogę Ci pomóc?</a></li>
+            <li><a href="kariera.html" class="nav-link">Kariera</a></li>
+            <li><a href="index.html#contact" class="nav-link">Kontakt</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main class="content">
+        <a href="index.html#about" class="back-link">
+          ← Powrót do strony głównej
+        </a>
+  <section class="help-section">
+    <h2>Jak mogę Ci pomóc?</h2>
+
+    <p>
+      Wypełnij formularz - odezwę się do Ciebie najszybciej jak to możliwe.
+    </p>
+
+    <form id="help-form" class="google-style-form">
+
+      <!-- 1 -->
+      <div class="form-block">
+        <label>1. Imię i nazwisko</label>
+        <input type="text" name="from_name" required />
+      </div>
+
+      <!-- 2 -->
+      <div class="form-block">
+        <label>2. Adres e-mail</label>
+        <input type="email" name="reply_to" required />
+      </div>
+
+      <!-- 3 -->
+      <div class="form-block">
+        <label>3. Numer telefonu</label>
+        <input type="text" name="phone" />
+      </div>
+
+      <!-- 4 -->
+      <div class="checkbox-group">
+<label>4. Jakiego zabezpieczenia potrzebujesz?</label>
+  <label class="checkbox-card">
+    <input type="checkbox" name="topic" value="Ubezpieczenie na życie" />
+    <span>Ubezpieczenie na życie</span>
+  </label>
+
+  <label class="checkbox-card">
+    <input type="checkbox" name="topic" value="Ubezpieczenie majątkowe" />
+    <span>Ubezpieczenie majątkowe</span>
+  </label>
+
+  <label class="checkbox-card">
+    <input type="checkbox" name="topic" value="Kredyt / refinansowanie" />
+    <span>Kredyt / refinansowanie</span>
+  </label>
+
+  <label class="checkbox-card">
+    <input type="checkbox" name="topic" value="Inwestycje" />
+    <span>Inwestycje</span>
+  </label>
+
+  <label class="checkbox-card">
+    <input type="checkbox" name="topic" value="Emerytura" />
+    <span>Emerytura</span>
+  </label>
+
+  <label class="checkbox-card">
+    <input type="checkbox" name="topic" value="Inne" />
+    <span>Inne</span>
+  </label>
+
+</div>
+<br />
+      <!-- 5 -->
+      <div class="form-block">
+        <label>5.  Inne - dodatkowe informacje dla mnie
+</label>
+        <textarea name="message" rows="6" required></textarea>
+      </div>
+
+      <button type="submit" class="send-btn">
+        Wyślij
+      </button>
+    </form>
+  </section>
+</main>
+
+      <nav class="mobile-top-nav">
+  <a href="index.html#about">O Mnie</a>
+  <a href="index.html#experience">Warto przeczytać</a>
+  <a href="pomoc.html" class="active">Jak mogę Ci pomóc?</a>
+  <a href="kariera.html" class="active-mobile">Kariera</a>
+  <a href="index.html#contact">Kontakt</a>
+</nav>
+
+      
+    </footer>
+  </body>
+</html>
